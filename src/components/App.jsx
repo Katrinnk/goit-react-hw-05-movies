@@ -1,6 +1,11 @@
 import Home from 'pages/Home/Home';
 import Movies from 'pages/Movies/Movies';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import {
+  NavLink,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from 'react-router-dom';
 
 const App = () => {
   return (
@@ -8,7 +13,7 @@ const App = () => {
     //   <Home />
     //   <Movies />
     // </>
-    <>
+    <Router>
       {/* header */}
       <nav>
         <div>
@@ -18,10 +23,10 @@ const App = () => {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="/movies" element={<Movies />} />
       </Routes>
-    </>
+    </Router>
   );
 };
 

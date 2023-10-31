@@ -9,10 +9,6 @@ import {
 
 const App = () => {
   return (
-    // <>
-    //   <Home />
-    //   <Movies />
-    // </>
     <Router>
       {/* header */}
       <nav>

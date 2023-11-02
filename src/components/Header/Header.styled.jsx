@@ -12,7 +12,6 @@ export const Nav = styled('nav')(() => {
         textDecoration: 'none',
         color: '#677bd6',
         '&.active': {
-          textDecoration: 'underline',
           color: '#353fd0',
         },
       },

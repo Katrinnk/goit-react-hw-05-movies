@@ -10,6 +10,9 @@ const Home = () => {
       try {
         const { data } = await getTrending();
         setMovies([data.results]);
+        if (data.results.length === 0) {
+          Notify.failure('Sorry, we not find films');
+        }
       } catch (e) {
         Notify.failure(e);
       }
@@ -17,6 +20,7 @@ const Home = () => {
     fetchTrending();
   }, []);
 
+  console.log('movies from home', movies);
   return (
     <>
       <h2>Home</h2>

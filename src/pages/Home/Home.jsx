@@ -1,35 +1,26 @@
 import { getTrending } from 'api/movies';
+import MoviesGallery from 'components/MoviesGallery/MoviesGallery';
 import { Notify } from 'notiflix';
-// import { Notify } from 'notiflix';
-// import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
-  //   useEffect(() => {
-  //     const fetchTrending = async () => {
-  //       try {
-  //         const data = await getTrending();
-  //         console.log('data', data);
-  //       } catch (e) {
-  //         Notify.failure(e);
-  //       }
-  //     };
-  //     fetchTrending();
-  //   }, []);
-
-  const fetchTrending = async () => {
-    try {
-      const data = await getTrending();
-      console.log('data', data);
-    } catch (e) {
-      Notify.failure(e);
-    }
-  };
-
-  fetchTrending();
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    const fetchTrending = async () => {
+      try {
+        const { data } = await getTrending();
+        setMovies([data.results]);
+      } catch (e) {
+        Notify.failure(e);
+      }
+    };
+    fetchTrending();
+  }, []);
 
   return (
     <>
       <h2>Home</h2>
+      <MoviesGallery movies={movies} />
     </>
   );
 };

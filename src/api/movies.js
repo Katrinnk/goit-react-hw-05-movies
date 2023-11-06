@@ -7,3 +7,25 @@ export async function getTrending() {
   const data = await axios.get(`trending/all/day?api_key=${API_KEY}`);
   return data;
 }
+
+export async function getMoviesFromSearch(search) {
+  const data = await axios.get(
+    `search/movie?api_key=${API_KEY}&query=${search}`
+  );
+  return data;
+}
+
+export async function getMovieDetails(id) {
+  const data = await axios.get(`movie/${id}?api_key=${API_KEY}`);
+  return data;
+}
+
+export async function getMovieCredits(id) {
+  const data = await axios.get(`movie/${id}/credits?api_key=${API_KEY}`);
+  return data;
+}
+
+export async function getMovieReviews(id) {
+  const data = await axios.get(`movie/${id}/reviews?api_key=${API_KEY}`);
+  return data;
+}

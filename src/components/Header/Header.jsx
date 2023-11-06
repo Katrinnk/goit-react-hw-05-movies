@@ -1,6 +1,5 @@
+import { NavLink } from 'react-router-dom';
 import { Nav } from './Header.styled';
-
-const { NavLink } = require('react-router-dom');
 
 const Header = () => {
   return (

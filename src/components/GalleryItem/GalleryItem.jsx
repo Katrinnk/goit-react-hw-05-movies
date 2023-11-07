@@ -11,7 +11,9 @@ const GalleryItem = ({
         <img
           className="card-img-top"
           src={
-            backdrop_path && `https://image.tmdb.org/t/p/w400/${backdrop_path}`
+            backdrop_path
+              ? `https://image.tmdb.org/t/p/w400/${backdrop_path}`
+              : `https://cdn2.iconfinder.com/data/icons/admin-tools-2/25/image2-1024.png`
           }
           alt={title}
         />

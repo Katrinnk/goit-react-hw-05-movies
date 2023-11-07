@@ -27,9 +27,6 @@ const Cast = () => {
     fetchCast();
   }, [movieId]);
 
-  const defaultImg =
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRULocmP6cP6JYFZmzMlbVHbWwu-oAdX5NaQ&usqp=CAU';
-
   return (
     <CastWrap>
       {error && <h1>{error}</h1>}
@@ -44,7 +41,7 @@ const Cast = () => {
                   src={
                     person.profile_path
                       ? `https://image.tmdb.org/t/p/w200/${person.profile_path}`
-                      : defaultImg
+                      : `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRULocmP6cP6JYFZmzMlbVHbWwu-oAdX5NaQ&usqp=CAU`
                   }
                   alt={cast.cast.name}
                   width="200px"

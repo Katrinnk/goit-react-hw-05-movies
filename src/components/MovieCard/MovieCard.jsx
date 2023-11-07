@@ -6,8 +6,9 @@ const MovieCard = ({ movie }) => {
       <img
         className="card-img-top"
         src={
-          movie.backdrop_path &&
-          `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
+          movie.backdrop_path
+            ? `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
+            : `https://cdn2.iconfinder.com/data/icons/admin-tools-2/25/image2-1024.png`
         }
         alt={movie.title}
       />

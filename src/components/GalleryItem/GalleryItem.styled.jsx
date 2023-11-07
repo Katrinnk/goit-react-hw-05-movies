@@ -14,6 +14,9 @@ export const Wrap = styled('div')(() => {
   return {
     '& a': {
       textDecoration: 'none',
+      '& img': {
+        width: '40vh',
+      },
     },
   };
 });
